@@ -8,7 +8,7 @@ class Calc {
 	}
 	public class q3 {
 	    public static void main(String[] args) {
-	        Calculator calc = new Calculator();
+	        Calc calc = new Calc();
 
 	        System.out.println("Sum of 2: " + calc.add(10, 20));
 	        System.out.println("Sum of doubles: " + calc.add(5.5, 4.5));
