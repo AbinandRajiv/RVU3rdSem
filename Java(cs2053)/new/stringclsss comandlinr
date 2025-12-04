@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Lab2_StringArgs {
+    public static void main(String[] args) {
+        // Accept user details (name, city, college) via command-line args OR Scanner fallback
+        String name, city, college;
+        if (args.length >= 3) {
+            name = args[0];
+            city = args[1];
+            college = args[2];
+        } else {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter name city college (space separated): ");
+            name = sc.next();
+            city = sc.next();
+            college = sc.next();
+            sc.close();
+        }
+
+        // Manipulate using String methods
+        String id = (name.substring(0, Math.min(3, name.length())).toUpperCase()
+                + "-" + city.toLowerCase()
+                + "-" + college.replaceAll("\\s+", "")).trim();
+
+        System.out.println("Name: " + name);
+        System.out.println("City: " + city);
+        System.out.println("College: " + college);
+        System.out.println("Generated ID: " + id);
+        System.out.println("Reverse name: " + new StringBuilder(name).reverse());
+        System.out.println("Name contains 'a'? " + name.toLowerCase().contains("a"));
+        System.out.println("Joined: " + String.join(", ", name, city, college));
+    }
+}
