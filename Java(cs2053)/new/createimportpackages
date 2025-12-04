@@ -1,0 +1,30 @@
+package college;
+
+public class Department {
+    private String name;
+    public Department(String name) { this.name = name; }
+    public String getName() { return name; }
+}
+package college;
+
+public class Faculty {
+    private String facultyName;
+    private Department department;
+    public Faculty(String facultyName, Department department) {
+        this.facultyName = facultyName;
+        this.department = department;
+    }
+    public String details() {
+        return facultyName + " - " + department.getName();
+    }
+}
+import college.Department;
+import college.Faculty;
+
+public class Lab4_UsePackage {
+    public static void main(String[] args) {
+        Department cs = new Department("Computer Science");
+        Faculty f = new Faculty("Dr. Kavya", cs);
+        System.out.println("Faculty: " + f.details());
+    }
+}
